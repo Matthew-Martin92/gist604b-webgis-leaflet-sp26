@@ -34,14 +34,15 @@ L.control.scale().addTo(map);
 // ================================================
 
 // Layer groups allow toggling layers on/off
-const lineLayer = L.layerGroup().addTo(map);
+
 const pointLayer = L.layerGroup().addTo(map);
+const lineLayer = L.layerGroup().addTo(map);
 const polygonLayer = L.layerGroup().addTo(map);
 
 // UI to toggle layers
 L.control.layers(null, {
-    'Streets': lineLayer,
     'Schools': pointLayer,
+    'Streets': lineLayer,
     'Land Use': polygonLayer
 }).addTo(map);
 
@@ -77,3 +78,18 @@ fetch('data/yucaipa_schools.geojson')
 //Step 6: Load Line Data (Streets)
 // ================================================
 
+fetch('data/yucaipa_streets.geojson')
+    .then(res => res.json())
+    .then(data => {L.geoJSON(data, {
+
+        //Style Lines
+        style: function(feature) {
+            return {
+                color: '#b9331b',
+                weight: 3
+            };
+        },
+    }).addTo(lineLayer);
+
+})
+.catch(err => console.error('Error loading Streets', err));
