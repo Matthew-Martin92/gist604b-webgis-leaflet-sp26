@@ -1,0 +1,166 @@
+/* =========================
+   DARK THEME BASE VARIABLES
+   ========================= */
+:root {
+  --bg-color: #0f1115;
+  --surface-color: rgba(26, 29, 36, 0.9);
+  --primary-color: #4f8cff;
+  --secondary-color: #a0a8b8;
+  --text-color: #e6e9ef;
+  --muted-text: #9aa3b2;
+  --border-color: #2a2f3a;
+  --hover-color: #2c3444;
+
+  --radius: 8px;
+  --transition: 0.25s ease;
+  --font-main: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* =========================
+   FULLSCREEN LAYOUT
+   ========================= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+}
+
+/* Main app wrapper */
+.app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* =========================
+   MAP CONTAINER
+   ========================= */
+#map {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* =========================
+   SIDEBAR (for layers/info)
+   ========================= */
+.sidebar {
+  width: 300px;
+  background-color: var(--surface-color);
+  border-right: 1px solid var(--border-color);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+/* Collapsible sidebar option */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* =========================
+   FLOATING PANELS / OVERLAYS
+   ========================= */
+.panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--surface-color);
+  padding: 15px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+/* Bottom info panel */
+.panel-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.button {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background-color: #3a6fe0;
+}
+
+/* =========================
+   MAP CONTROL OVERRIDES
+   (Leaflet example)
+   ========================= */
+.leaflet-control {
+  background-color: var(--surface-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius) !important;
+  color: var(--text-color) !important;
+}
+
+.leaflet-control a {
+  color: var(--text-color) !important;
+}
+
+.leaflet-bar a {
+  background-color: var(--surface-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--hover-color) !important;
+}
+
+/* Popup styling */
+.leaflet-popup-content-wrapper {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border-radius: var(--radius);
+}
+
+.leaflet-popup-tip {
+  background-color: var(--surface-color);
+}
+
+/* =========================
+   INPUTS (for search/layers)
+   ========================= */
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background-color: #1a1d24;
+  color: var(--text-color);
+}
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius);
+}
