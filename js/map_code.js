@@ -64,11 +64,16 @@ fetch('data/yucaipa_schools.geojson')
 
         //add popups
         onEachFeature: function(feature, layer) {
-            const name = feature.properties.name || 'School';
-            layer.bindPopup(`<strong>${name}</strong>`);
+            const name = feature.properties.NAME || '"NAME"';
+            const address = feature.properties.ADDRESS || "No address available";
+            layer.bindPopup(`
+            <strong>${name}</strong><br>${address}`);
         }
     }).addTo(pointLayer);
 })
 .catch(err => console.error('Error loading schools'))
 
+// ================================================
+//Step 6: Load Line Data (Streets)
+// ================================================
 
