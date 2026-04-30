@@ -34,10 +34,10 @@ L.control.scale().addTo(map);
 // ================================================
 
 // Layer groups allow toggling layers on/off
-
+const polygonLayer = L.layerGroup().addTo(map);
 const pointLayer = L.layerGroup().addTo(map);
 const lineLayer = L.layerGroup().addTo(map);
-const polygonLayer = L.layerGroup().addTo(map);
+
 
 // UI to toggle layers
 L.control.layers(null, {
@@ -85,7 +85,7 @@ fetch('data/yucaipa_streets.geojson')
         //Style Lines
         style: function(feature) {
             return {
-                color: '#b9331b',
+                color: '#995802',
                 weight: 3
             };
         },
@@ -93,3 +93,26 @@ fetch('data/yucaipa_streets.geojson')
 
 })
 .catch(err => console.error('Error loading Streets', err));
+
+// ================================================
+//Step 7: Load polygon Data (landuse)
+// ================================================
+
+fetch('data/yucaipa_land_use.geojson')
+    .then(res => res.json())
+    .then(data => {
+        map.fitBounds (
+            L.geoJSON(data, {
+                style: function() {
+                    return {
+                        color: '#f56767',
+                        weight: 2,
+                        fill: true
+                    };
+                },
+            })
+            .addTo(polygonLayer)
+            .getBounds()
+        );
+    })
+.catch(err => console.error('Error loading boundary', err));
