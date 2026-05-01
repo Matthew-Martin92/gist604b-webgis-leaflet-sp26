@@ -25,6 +25,7 @@ This repository creates and displayes a Webmap on Yucaipa Schools, Streets, and 
 
 ## Repository Structure
 The data folder contains the geojson files used in the map_code.js file to create the webmap. 
+
     .
     ├── data/
     │   ├── yucaipa_land_use.geojson
