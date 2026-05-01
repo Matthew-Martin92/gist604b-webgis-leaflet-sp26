@@ -1,54 +1,41 @@
-# GIST 604B – WebGIS & Full-Stack Orchestration
-Repository for building an interactive web mapping application using HTML, CSS, JavaScript, and Leaflet.
+# WebGIS & Full-Stack Orchestration
+
+
+**Student:** Matthew Martin  
+**Course:** GIST 604B – Open Source GIS  
+**Module:** Module 6: WebGIS & Full-Stack Orchestration  
+**University of Arizona**  
+
+## Project Description  
+This repository creates and displayes a Webmap on Yucaipa Schools, Streets, and Land Uses in the city of Yucaipa California. I built a map using Leaflet code with HTML, CSS, and JavaScript to build and display the webmap. It uses the Yucaipa Land Use, Yucaipa Streets, and Yucaipa Schools JSON files located in the data folder as the data.
+
+## Tools and Technologies
+- Coding languages: HTML, CSS, JavaScript and Leaflet.
+
+
+## What I Did
+- Uploaded 3 JSON files into the data folder
+- Wrote CSS code to stylize the website
+- Wrote HTML code to structure the website
+- Wrote JavaScript and Leaflet code to create a webmap from the JSON fles on the website.
+
+## How to View / Run
+[Instructions for viewing the project. For example:
+- To open the webmap created please follow this link: (https://matthew-martin92.github.io/gist604b-webgis-leaflet-sp26/)
+  
 
 ## Repository Structure
     .
     ├── data/
-    │   ├── your_point_layer.geojson
-    │   ├── your_line_layer.geojson
-    │   └── your_polygon_layer.geojson
+    │   ├── yucaipa_land_use.geojson
+    │   ├── yucaipa_schools.geojson
+    │   └── yucaipa_streets.geojson
     ├── js/
-    │   └── your_js_file.js
+    │   └── map_code.js
     ├── css/
-    │   └── your_css_file.css
+    │   └── styles.css
     ├── index.html
     ├── package.json
     ├── package-lock.json
     ├── .gitignore
     └── README.md
-
-## Notes
-- Replace the placeholder filenames in `data/`, `js/`, and `css/` with your own files.
-- All GeoJSON datasets must be in WGS84 (EPSG:4326) and placed in the `data/` folder.
-- Run `npm install` to install dependencies and `npm start` to launch the local development server.
-- Open `http://localhost:8080` in your browser to preview your map during development.
-- The final web map is published using GitHub Pages.
-
-
-
-# [Project Title]
-
-**Student:** [YOUR NAME]
-**Course:** GIST 604B – Open Source GIS
-**Module:** [MODULE NUMBER AND NAME]
-**University of Arizona**
-
-## Project Description
-[2–3 sentences describing what this project is about and what you built or analyzed.]
-
-## Tools and Technologies
-- [Tool 1, e.g. QGIS, PostGIS, GeoPandas, Leaflet]
-- [Tool 2]
-- [Tool 3]
-
-## What I Did
-[3–5 bullet points summarizing the key tasks completed in this assignment.]
-
-## How to View / Run
-[Instructions for viewing the project. For example:
-- Link to live GitHub Pages site (if applicable)
-- How to run a Python script
-- How to open the map]
-
-## Repository Structure
-[Brief description of folders and key files]
